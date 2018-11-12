@@ -1,0 +1,7 @@
+com\cerner\devessentials\unittesting\bmi\HumanRanges.class
+com\cerner\devessentials\unittesting\bmi\BMIRange.class
+com\cerner\devessentials\unittesting\bmi\BMIDiagnosticResultLoader.class
+com\cerner\devessentials\unittesting\bmi\BMICalculator.class
+com\cerner\devessentials\unittesting\bmi\BMIOutOfBoundsException.class
+com\cerner\devessentials\unittesting\bmi\BMICalculationException.class
+com\cerner\devessentials\unittesting\bmi\BMICalculatorImpl.class

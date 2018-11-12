@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="9" failures="0" name="com.cerner.devessentials.unittesting.bmi.BMICalculatorImplTest" time="0.195" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.8.0_101\jre\bin"/>
+    <property name="java.vm.version" value="25.101-b13"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) Client VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="IN"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Cerner\PMCS\my hackathon\BodyMassIndexCalculator"/>
+    <property name="java.runtime.version" value="1.8.0_101-b13"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="basedir" value="C:\Cerner\PMCS\my hackathon\BodyMassIndexCalculator"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files (x86)\Java\jdk1.8.0_101\jre\lib\endorsed"/>
+    <property name="os.arch" value="x86"/>
+    <property name="surefire.real.class.path" value="C:\Cerner\PMCS\my hackathon\BodyMassIndexCalculator\target\surefire\surefirebooter1895014889126271743.jar"/>
+    <property name="java.io.tmpdir" value="C:\Users\SB051046\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files (x86)\Java\jdk1.8.0_101\jre\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;%MAVEN_HOME%\bin;C:\Program Files (x86)\GnuWin32\bin;%JAVA_HOME%\bin;C:\ProgramData\Oracle\Java\javapath;%BATCH_PATH%;%SystemRoot%;%SystemRoot%\system32;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files (x86)\PuTTY\;%USERPROFILE%\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;%SONAR_HOME%;%SONAR_SCANNER_HOME%;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\nodejs\;%MYSQL_HOME%\bin;C:\Program Files (x86)\SlikSvn\bin;C:\Program Files\TortoiseSVN\bin;C:\Cerner\commands;C:\Program Files\TortoiseGit\bin;C:\Android;C:\Ruby25\bin;&quot;C:\Installation Software\apache-maven-3.2.1\bin&quot;;C:\Windows\System32;C:\Ruby25\bin;C:\Users\SB051046\AppData\Local\Microsoft\WindowsApps;&quot;C:\Program Files (x86)\Java\jdk1.7.0_55\bin&quot;;C:\Users\SB051046\AppData\Roaming\npm;C:\Users\SB051046\AppData\Local\Programs\Fiddler;C:\Program Files\Docker Toolbox;."/>
+    <property name="surefire.test.class.path" value="C:\Cerner\PMCS\my hackathon\BodyMassIndexCalculator\target\test-classes;C:\Cerner\PMCS\my hackathon\BodyMassIndexCalculator\target\classes;C:\Users\SB051046\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\SB051046\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\SB051046\.m2\repository\com\cerner\system\system-core\2.8\system-core-2.8.jar;C:\Users\SB051046\.m2\repository\org\mockito\mockito-all\1.9.5\mockito-all-1.9.5.jar;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
+    <property name="os.version" value="10.0"/>
+    <property name="user.home" value="C:\Users\SB051046"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="user.name" value="SB051046"/>
+    <property name="java.class.path" value="C:\Cerner\PMCS\my hackathon\BodyMassIndexCalculator\target\test-classes;C:\Cerner\PMCS\my hackathon\BodyMassIndexCalculator\target\classes;C:\Users\SB051046\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\SB051046\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\SB051046\.m2\repository\com\cerner\system\system-core\2.8\system-core-2.8.jar;C:\Users\SB051046\.m2\repository\org\mockito\mockito-all\1.9.5\mockito-all-1.9.5.jar;"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="32"/>
+    <property name="java.home" value="C:\Program Files (x86)\Java\jdk1.8.0_101\jre"/>
+    <property name="sun.java.command" value="C:\Cerner\PMCS\my hackathon\BodyMassIndexCalculator\target\surefire\surefirebooter1895014889126271743.jar C:\Cerner\PMCS\my hackathon\BodyMassIndexCalculator\target\surefire\surefire8839788527900279582tmp C:\Cerner\PMCS\my hackathon\BodyMassIndexCalculator\target\surefire\surefire1470572292172602465tmp"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_101"/>
+    <property name="java.ext.dirs" value="C:\Program Files (x86)\Java\jdk1.8.0_101\jre\lib\ext;C:\windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files (x86)\Java\jdk1.8.0_101\jre\lib\resources.jar;C:\Program Files (x86)\Java\jdk1.8.0_101\jre\lib\rt.jar;C:\Program Files (x86)\Java\jdk1.8.0_101\jre\lib\sunrsasign.jar;C:\Program Files (x86)\Java\jdk1.8.0_101\jre\lib\jsse.jar;C:\Program Files (x86)\Java\jdk1.8.0_101\jre\lib\jce.jar;C:\Program Files (x86)\Java\jdk1.8.0_101\jre\lib\charsets.jar;C:\Program Files (x86)\Java\jdk1.8.0_101\jre\lib\jfr.jar;C:\Program Files (x86)\Java\jdk1.8.0_101\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="localRepository" value="C:\Users\SB051046\.m2\repository"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
+  </properties>
+  <testcase classname="CalculateBMITest[0: bmi Of(1.8 and 55) is 16.975](com.cerner.devessentials.unittesting.bmi.BMICalculatorImplTest)" name="CalculateBMITest[0: bmi Of" time="0.003"/>
+  <testcase classname="CalculateBMITest[1: bmi Of(3 and 500) is 55.556](com.cerner.devessentials.unittesting.bmi.BMICalculatorImplTest)" name="CalculateBMITest[1: bmi Of" time="0"/>
+  <testcase classname="CalculateBMITest[2: bmi Of(1 and 10) is 10](com.cerner.devessentials.unittesting.bmi.BMICalculatorImplTest)" name="CalculateBMITest[2: bmi Of" time="0"/>
+  <testcase classname="CalculateBMITest[3: bmi Of(0 and 9) is -1](com.cerner.devessentials.unittesting.bmi.BMICalculatorImplTest)" name="CalculateBMITest[3: bmi Of" time="0.013"/>
+  <testcase classname="CalculateBMITest[4: bmi Of(4 and 501) is -1](com.cerner.devessentials.unittesting.bmi.BMICalculatorImplTest)" name="CalculateBMITest[4: bmi Of" time="0"/>
+  <testcase classname="CalculateBMITest[5: bmi Of(-1 and 11) is -1](com.cerner.devessentials.unittesting.bmi.BMICalculatorImplTest)" name="CalculateBMITest[5: bmi Of" time="0"/>
+  <testcase classname="CalculateBMITest[6: bmi Of(2 and -5) is -1](com.cerner.devessentials.unittesting.bmi.BMICalculatorImplTest)" name="CalculateBMITest[6: bmi Of" time="0.001"/>
+  <testcase classname="CalculateBMITest[7: bmi Of(3.1 and 55) is -1](com.cerner.devessentials.unittesting.bmi.BMICalculatorImplTest)" name="CalculateBMITest[7: bmi Of" time="0"/>
+  <testcase classname="CalculateBMITest[8: bmi Of(2 and 501) is -1](com.cerner.devessentials.unittesting.bmi.BMICalculatorImplTest)" name="CalculateBMITest[8: bmi Of" time="0"/>
+</testsuite>

@@ -1,0 +1,4 @@
+com\cerner\devessentials\unittesting\bmi\BMICalculatorImplTest.class
+com\cerner\devessentials\unittesting\bmi\BMIresultLoaderTest.class
+com\cerner\devessentials\unittesting\bmi\TestSuite.class
+com\cerner\devessentials\unittesting\bmi\BMIDiagnosticLoaderTest.class

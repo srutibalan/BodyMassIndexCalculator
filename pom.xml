@@ -1,0 +1,197 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>BMICalculator</groupId>
+	<artifactId>BMICalculator</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<properties>      
+		<clover.license.version>3.0</clover.license.version>
+      	<clover.plugin.version>3.1.10</clover.plugin.version>
+      	<maven.clover.licenseLocation>${project.build.directory}/clover.license</maven.clover.licenseLocation>
+    </properties>
+    
+	<build>
+<!-- 		<sourceDirectory>src</sourceDirectory> -->
+		
+		<resources>
+			<resource>
+				<directory>src</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+	            <!-- This configuration must appear above the maven-clover2-plugin configuration to ensure the license is copied prior to clover instrumentation. -->
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-dependency-plugin</artifactId>
+	            <executions>
+	               <execution>
+	                  <id>copy-test-license</id>
+	                  <goals>
+	                     <goal>copy</goal>
+	                  </goals>
+	                  <phase>process-test-resources</phase>
+	                  <configuration>
+	                     <artifactItems>
+	                        <artifactItem>
+	                           <groupId>com.cerner.clover</groupId>
+	                           <artifactId>clover</artifactId>
+	                           <version>${clover.license.version}</version>
+	                           <type>license</type>
+	                        </artifactItem>
+	                     </artifactItems>
+	                     <outputDirectory>${project.build.directory}</outputDirectory>
+	                     <stripVersion>true</stripVersion>
+	                  </configuration>
+	               </execution>
+	               <execution>
+	                  <id>copy-pre-site-license</id>
+	                  <goals>
+	                     <goal>copy</goal>
+	                  </goals>
+	                  <phase>pre-site</phase>
+	                  <configuration>
+	                     <artifactItems>
+	                        <artifactItem>
+	                           <groupId>com.cerner.clover</groupId>
+	                           <artifactId>clover</artifactId>
+	                           <version>${clover.license.version}</version>
+	                           <type>license</type>
+	                        </artifactItem>
+	                     </artifactItems>
+	                     <outputDirectory>${project.build.directory}</outputDirectory>
+	                     <stripVersion>true</stripVersion>
+	                  </configuration>
+	               </execution>
+	            </executions>
+	         </plugin>
+         <plugin>
+            <groupId>com.atlassian.maven.plugins</groupId>
+            <artifactId>maven-clover2-plugin</artifactId>
+            <version>${clover.plugin.version}</version>
+            <configuration>
+            	<jdk>${project.java.version}</jdk>
+               	<generateHtml>true</generateHtml>
+          		<generateXml>true</generateXml>
+<!--                 <encoding>${project.build.sourceEncoding}</encoding> -->
+            </configuration>
+            <executions>
+               	<execution>
+                  	<id>main</id>
+                  	<goals>
+                     	<goal>instrument-test</goal>
+                  	</goals>
+                  	<phase>pre-site</phase>
+               </execution>
+            </executions>
+         </plugin>
+		<plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-surefire-plugin</artifactId>
+		    <version>2.8.1</version>
+		    <configuration>
+			    <includes>
+			    	<include>**/*Test.java</include>
+			    </includes>
+		    </configuration>
+		</plugin>
+		</plugins>
+	</build>
+	
+	
+	
+	
+	
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+			</plugin>
+			<plugin>
+				<groupId>com.atlassian.maven.plugins</groupId>
+				<artifactId>maven-clover2-plugin</artifactId>
+				<version>3.1.10.1</version>
+				<configuration>
+					<jdk>${compile.source}</jdk>
+					 <contextFilters>assert</contextFilters>
+					<licenseLocation>http://repo.release.cerner.corp/internal/repo/com/cerner/clover/clover/3.0/clover-3.0.license</licenseLocation>
+				</configuration>
+			</plugin>
+		</plugins>
+	</reporting>
+	
+	<dependencyManagement>
+  		<dependencies>
+			<dependency>
+				<groupId>com.cerner.system</groupId>
+				<artifactId>system-core</artifactId>
+				<version>2.8</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+	<repositories>
+		<repository>
+			<id>cerner-release-main</id>
+			<name>Cerner Release Main Artifact Repository</name>
+			<url>http://repo.release.cerner.corp/main/repo</url>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+				<checksumPolicy>fail</checksumPolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+  
+    <distributionManagement>
+		<downloadUrl>http://repo.release.cerner.corp/main/repo/</downloadUrl>
+		<repository>
+			<id>cerner-main-release</id>
+			<name>Cerner Release Main Artifact Repository</name>
+			<url>http://repo.release.cerner.corp/main/repo</url>
+		</repository>
+		<snapshotRepository>
+			<id>devcenter-snapshot</id>
+			<name>DevCenter Snapshot Repository</name>
+			<url>http://repo.devcenter.cerner.corp/snapshot-repo</url>
+			<uniqueVersion>true</uniqueVersion>
+		</snapshotRepository>
+		<site>
+			<id>cerner-main-site</id>
+			<name>Cerner Release Main Site Repository</name>
+			<url>scp://repo.release.cerner.corp/main/site/${project.groupId}/${project.artifactId}/${project.version}</url>
+		</site>
+	</distributionManagement>
+  
+  	<dependencies>
+  		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+		 <dependency>
+ 			<groupId>com.cerner.system</groupId>
+ 			<artifactId>system-core</artifactId>
+ 		</dependency>
+		<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-all</artifactId>
+				<version>1.9.5</version>
+		</dependency>
+	</dependencies>
+</project>
